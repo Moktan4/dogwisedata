@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <head>
@@ -10,7 +13,20 @@
 </head>
 </head>
 <style>
-
+.jumbotron {
+      
+      color: #000000;
+      padding: 100px 25px;
+      font-family: "Times New Roman", Times, serif;
+  }
+   h4 {
+      font-size: 24px;
+      line-height: 1.375em;
+      color: #000000;
+      font-weight: 400;
+      margin-bottom: 30px;
+      
+  }
  .navbar {
       margin-bottom: 0;
       background-color: #008080;
@@ -54,12 +70,18 @@
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="content/admin.jsp">I'm an Admin</a></li>
-        <li><a href="content/dogstype.jsp">I am a Volunteer</a></li>
+      <li><a href="/dogwisedata/">Home</a></li>
       </ul>
     </div>
     </div>
 
 </nav>
+<BR><BR>
+<div class="jumbotron text-center">
+  <h4>Admin Role</h4>
+  <a href="adminlist.jsp" class="btn btn-warning" role="button">Add/View Admin</a>
+  <a href="admindoglist.jsp" class="btn btn-warning" role="button">Add/View Dog</a>
+
+</div>
 </body>
 </html>

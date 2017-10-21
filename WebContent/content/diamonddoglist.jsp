@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <head>
@@ -34,6 +37,22 @@
       border-color: transparent;
       color: #fff !important;
   }
+  h4{
+  	margin-bottom: 0;
+      background-color: #008080;
+      z-index: 9999;
+      border: 0;
+      font-size: 18px !important;
+      line-height: 1.42857143 !important;
+      border-radius: 0;
+      font-family: "Times New Roman", Times, serif;
+      font-style:strong;
+      color: #fff;
+  }
+  th{
+  text-align:center;
+  }
+  
 }
 
 
@@ -54,12 +73,31 @@
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="content/admin.jsp">I'm an Admin</a></li>
-        <li><a href="content/dogstype.jsp">I am a Volunteer</a></li>
+      <li><a href="/dogwisedata/">Home</a></li>
+        <li><a href="emeralddoglist.jsp">Emerald Dog List</a></li>
+        <li><a style="background-color:#fff" href="#">Diamond Dog List</a></li>
       </ul>
     </div>
     </div>
-
 </nav>
+<br>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="table-responsive">  
+<h4>Diamond Dog List</h4>        
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+         <th>ID#</th>
+        <th>Name</th>
+        <th>Suite#</th>
+      </tr>
+    </thead>
+    </table>
+    </div>
+    </div>
 </body>
 </html>
