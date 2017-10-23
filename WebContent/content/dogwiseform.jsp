@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Form</title>
+<title>Interactions Form</title>
 <link href="/dogwisedata/bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="/dogwisedata/datepicker/css/bootstrap-datetimepicker.css" rel="stylesheet" />
 <link href="/dogwisedata/assets/css/bootstrap-united.css" rel="stylesheet" />
@@ -47,11 +47,6 @@ body {
 </head>
 <body>
 
-
-	<script src="/dogwisedata/jquery-1.8.3.js">
-		
-	</script>
-
 	<script src="/dogwisedata/bootstrap/js/bootstrap.js">
 		
 	</script>
@@ -59,7 +54,9 @@ body {
 	<script src="/dogwisedata/datepicker/js/bootstrap-datetimepicker.js">
 		
 	</script>
-
+<div>
+    <jsp:include page="header.jsp"/>
+</div>
 <div class="navbar navbar-default">
 
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
@@ -165,6 +162,8 @@ body {
     return value.match(new RegExp("^(([0-9])*$")) != null;}
     </script>
 }​
-
+<div>
+    <jsp:include page="footer.jsp"/>
+</div>
 </body>
 </html>

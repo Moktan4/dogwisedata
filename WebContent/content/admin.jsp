@@ -3,21 +3,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
+
 <head>
-<head>
+ <title>Admin Page</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+
 </head>
 <style>
 .jumbotron {
       
       color: #000000;
       padding: 100px 25px;
-      font-family: "Times New Roman", Times, serif;
+      font-family: "Times New Roman", Times,mj\
+       serif;
   }
    h4 {
       font-size: 24px;
@@ -99,7 +101,11 @@ h2{
 
 </style>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+<div>
+    <jsp:include page="header.jsp"/>
+</div>
+<div>
+<nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header navbar-center">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -107,8 +113,6 @@ h2{
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <h3 ><strong>Dog Wise Data</strong></h3>
-
     </div>
    
 
@@ -120,21 +124,26 @@ h2{
     </div>
 
 </nav>
+</div>
 <BR><BR><BR><BR>
 
-  <div class="container">
+  <div class="container ">
 
       <form class="form-signin">
-        <h2 class="form-signin-heading">Admin Login</h2>
+        <h2 class="form-signin-heading ">Admin Login</h2>
         <label for="inputUsername" class="sr-only">Username</label>
        <!--  <input type="text" id="inputUsername" class="form-control" placeholder="username" required="" autofocus=""> -->
          <input type="text" id="inputUsername" class="form-control" placeholder="username" autofocus="">
         <label for="inputPassword" class="sr-only">Password</label>
         <!-- <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""> -->
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" >
-        <button class="btn btn-lg btn-primary btn-block" type="submit" ><a href="admintask.jsp">Login</a></button>
+        <a class="btn btn-large btn-info center-block" href="admintask.jsp">Login</a>
       </form>
-
     </div> 
-
-</html>
+    
+    <div>
+    <jsp:include page="footer.jsp"/>
+</div>
+   </body>
+   </html>
+ 

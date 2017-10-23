@@ -3,14 +3,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<head>
 
+ <title>Diamond Dog List</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+
 </head>
 <style>
 
@@ -58,7 +58,11 @@
 
 </style>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+<div>
+    <jsp:include page="header.jsp"/>
+</div>
+<div>
+<nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header navbar-center">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -66,7 +70,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <h3 ><strong>Dog Wise Data</strong></h3>
+    
 
     </div>
    
@@ -80,6 +84,7 @@
     </div>
     </div>
 </nav>
+</div>
 <br>
 <br>
 <br>
@@ -90,14 +95,25 @@
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>#</th>
-         <th>ID#</th>
-        <th>Name</th>
-        <th>Suite#</th>
+        <th id="index">#</th>
+        <th id="identification">ID#</th>
+        <th id="dogName">Name</th>
+        <th id="suiteNumber">Suite#</th>
+        <th id="dogSelect">Select</th>
+      </tr>
+      <tr>
+       <th>1</th>
+        <th>046579</th>
+        <th >Kula</th>
+        <th >102</th>
+        <th><button type="button" name="stream" ><a href="dogwiseform.jsp">Select</a></button></th>
       </tr>
     </thead>
     </table>
     </div>
     </div>
+    <div>
+    <jsp:include page="footer.jsp"/>
+</div>
 </body>
 </html>

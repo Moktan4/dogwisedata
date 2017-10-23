@@ -1,7 +1,7 @@
 <html>
 <head>
 <head>
-
+<title>DogWise</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -39,7 +39,12 @@
 
 </style>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
+<div>
+    <jsp:include page="content/header.jsp"/>
+</div>
+
+<div>
+<nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header navbar-center">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -47,7 +52,6 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <h3 ><strong>Dog Wise Data</strong></h3>
 
     </div>
    
@@ -61,5 +65,9 @@
     </div>
 
 </nav>
+</div>
+<div>
+    <jsp:include page="content/footer.jsp"/>
+</div>
 </body>
 </html>

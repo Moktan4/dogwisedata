@@ -4,9 +4,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Dog Profile</title>
 </head>
 <body>
+<div>
+    <jsp:include page="header.jsp"/>
+</div>
+<div>
+<nav class="navbar navbar-default">
+</nav>
+<div>
+    <jsp:include page="footer.jsp"/>
+</div>
 
 </body>
 </html>
