@@ -129,16 +129,16 @@ h2{
 
   <div class="container ">
 
-      <form class="form-signin" method="post" action="adminloginbean.jsp">
+      <form class="form-signin" method="post" action="../AdminLoginServlet">
         <h2 class="form-signin-heading ">Admin Login</h2>
         <label for="inputUsername" class="sr-only">Username</label>
-        <input type="text" id="inputUsername" class="form-control" placeholder="username" required="" autofocus="">
+        <input type="text" name="username" class="form-control" placeholder="username" value="" required="" autofocus="">
          <!-- <input type="text" id="userName" class="form-control" placeholder="username" autofocus=""> -->
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <input type="password" name="userpass" class="form-control" placeholder="Password" value="" required="">
         <!-- <input type="password" id="password" class="form-control" placeholder="Password" > -->
         
-        <input class="btn btn-large btn-info center-block" type="submit" name="Submit" value="Submit"></td>
+        <input class="btn btn-large btn-info center-block" type="submit" name="Submit" value="Login"></td>
        <!--  <a class="btn btn-large btn-info center-block" href="admintask.jsp">Login</a> -->
       </form>
     </div> 

@@ -22,6 +22,8 @@ public class DogWiseDataController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private VolunteerBean volunteerBean;
 	private static String DOGWISE_FORM = "content/dogwiseform.jsp";
+	
+	private static String ADMIN_LOGIN="content/admin.jsp";
 
 	public DogWiseDataController() {
 		super();

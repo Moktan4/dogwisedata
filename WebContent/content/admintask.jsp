@@ -55,6 +55,7 @@
 
 </style>
 <body>
+
 <div>
     <jsp:include page="header.jsp"/>
 </div>
@@ -84,7 +85,7 @@
 <BR><BR>
 <div class="jumbotron text-center">
   <h4>Admin Role</h4>
-  <a href="admindoglist.jsp" class="btn btn-warning" role="button">Add Dog</a>
+  <a href="content/admindoglist.jsp" class="btn btn-warning" role="button">Add Dog</a>
 
 </div>
 <div>
