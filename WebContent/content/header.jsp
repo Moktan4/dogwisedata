@@ -4,12 +4,11 @@
 <html>
 <head></head>
 <body>
-
+<div class="logo">
+              <img src="Image/Logo.png" class="img-responsive"/>
+            </div>
 <div class="navbar navbar-static-top">
-<div class="container text-center">
-      <h3>Dog Wise</h3>
-  
-  </div>
+<div class="container text-center"><h3>Dog Wise</h3></div>
   </div>
 
 </body>

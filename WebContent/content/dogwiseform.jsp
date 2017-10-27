@@ -13,65 +13,70 @@
 <link href="/dogwisedata/assets/css/bootstrap-united.css" rel="stylesheet" />
 <link href="/dogwisedata/assets/css/bootstrap-united.css" rel="stylesheet" />
 <style>
-.green {
-	font-weight: bold;
-	color: green;
+.navbar {
+	margin-bottom: 0;
+	background-color: #008080;
+	z-index: 9999;
+	border: 0;
+	font-size: 18px !important;
+	line-height: 1.42857143 !important;
+	border-radius: 0;
+	font-family: "Times New Roman", Times, serif;
+	font-style: strong;
+	color: #fff;
 }
 
-.message {
-	margin-bottom: 10px;
+.navbar li a, .navbar .navbar-brand {
+	color: #FEA900 !important;
 }
 
-.error {
-	color: #ff0000;
-	font-size: 0.9em;
-	font-weight: bold;
+.navbar-nav li a:hover, .navbar-nav li.active a {
+	color: #FEA900 !important;
+	background-color: #fff !important;
 }
 
-.errorblock {
-	color: #000;
-	background-color: #ffEEEE;
-	border: 3px solid #ff0000;
-	padding: 8px;
-	margin: 16px;
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+	color: #fff !important;
 }
-body {
-	height: 100%;
-	margin: 0;
-	background-color: #7BA2BB;
-	background-size: 1200px 600px;
-	background-repeat: no-repeat;
-	display: compact;
-}
+
 </style>
 </head>
 <body>
-
-	<script src="/dogwisedata/bootstrap/js/bootstrap.js">
-		
-	</script>
-
 	<script src="/dogwisedata/datepicker/js/bootstrap-datetimepicker.js">
 		
 	</script>
 <div>
     <jsp:include page="header.jsp"/>
 </div>
-<div class="navbar navbar-default">
+		<div>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header navbar-center">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
 
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<ul class="nav navbar-nav navbar-center">
-				<li><a>Volunteer Interactions</a></li>
-			</ul>
-		</div>
-	</div>
-		
 
-	
-		<div class="well">
+    </div>
+   
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/dogwisedata/">Home</a></li>
+        <li><a href="dogstype.jsp">View Dog</a></li>
+        <li><a style="background-color:#fff" href="#">Volunteer Log</a></li>
+      
+      </ul>
+    </div>
+    </div>
+
+</nav>
+</div>
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
+				
 						<form id="myForm" method="post" class="bs-example form-horizontal"
 							action="../DogWiseDataController">
 							<div class="form-group" >
@@ -148,9 +153,7 @@ body {
 							
 						</form>
 					</div>
-				</div>
-			</div>
-		</div>
+			
 
 	<script>
 		$(function() {

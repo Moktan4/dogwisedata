@@ -42,9 +42,9 @@ public class DogWiseDataController extends HttpServlet {
 		String forward = "";	
 		if (volunteerBean != null) {
 			
-boolean potty1= Boolean.parseBoolean(request.getParameter("potty"));
-boolean exercise= Boolean.parseBoolean(request.getParameter("exercise"));
-boolean training= Boolean.parseBoolean(request.getParameter("training"));
+			boolean potty1= Boolean.parseBoolean(request.getParameter("potty"));
+			boolean exercise= Boolean.parseBoolean(request.getParameter("exercise"));
+			boolean training= Boolean.parseBoolean(request.getParameter("training"));
 			volunteerBean.save(
 					request.getParameter("datetimepicker"),
 					potty1,
