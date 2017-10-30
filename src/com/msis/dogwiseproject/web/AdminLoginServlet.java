@@ -1,24 +1,16 @@
 package com.msis.dogwiseproject.web;
 
-import java.awt.Window;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.msis.dogwiseproject.backend.MyJDBCConnection;
 import com.msis.dogwiseproject.model.AdminLoginDAO;
-import com.mysql.cj.api.jdbc.Statement;
 
 public class AdminLoginServlet extends HttpServlet{ 
 		 /**
@@ -38,14 +30,19 @@ public class AdminLoginServlet extends HttpServlet{
 		  if(session!=null){
 			  session.setAttribute("name", name);
 		  }
+		 
+		  
 		  if (AdminLoginDAO.validate(name, pass)){
 			  System.out.println("Validated");
 			  RequestDispatcher rd = request.getRequestDispatcher("content/admintask.jsp");
 			  rd.forward(request, response);
 		  }else{
-			  RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
-			  rd.include(request, response);
+			  request.setAttribute("error", "Invalid Username or Password");
+			  RequestDispatcher rd = request.getRequestDispatcher("content/admin.jsp");
+			  rd.forward(request, response);
+			    
 		  }
+		  out.close();  
 		}
 		
 

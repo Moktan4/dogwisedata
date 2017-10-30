@@ -24,10 +24,4 @@ public class VolunteerBean {
 			e.printStackTrace();
 		} 
 	}
-	public static String toStringYesNo(boolean bool) {
-	      return toString(bool, "yes", "no");
-	  }
-	 public static String toString(boolean bool, String trueString, String falseString) {
-	      return bool ? trueString : falseString;
-	  }
 }

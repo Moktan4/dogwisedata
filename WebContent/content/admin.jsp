@@ -137,7 +137,8 @@ h2{
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" name="userpass" class="form-control" placeholder="Password" value="" required="">
         <!-- <input type="password" id="password" class="form-control" placeholder="Password" > -->
-        
+        <p style ="color:red"><%=request.getAttribute("error")!=null ? request.getAttribute("error"):"" %></p>
+
         <input class="btn btn-large btn-info center-block" type="submit" name="Submit" value="Login"></td>
        <!--  <a class="btn btn-large btn-info center-block" href="admintask.jsp">Login</a> -->
       </form>

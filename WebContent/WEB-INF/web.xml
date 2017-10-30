@@ -14,6 +14,10 @@
     <servlet-class>com.msis.dogwiseproject.web.DogWiseDataController</servlet-class>
   </servlet>
    <servlet>
+    <servlet-name>adminServlet</servlet-name>
+    <servlet-class>com.msis.dogwiseproject.web.AdminDogInfoEntryController</servlet-class>
+  </servlet>
+   <servlet>
     <servlet-name>adminlogin</servlet-name>
     <servlet-class>com.msis.dogwiseproject.web.AdminLoginServlet</servlet-class>
   </servlet>
@@ -21,8 +25,12 @@
     <servlet-name>dogwiseJDBCServlet</servlet-name>
     <url-pattern>/DogWiseDataController</url-pattern>
   </servlet-mapping>
-  
   <servlet-mapping>
+    <servlet-name>adminServlet</servlet-name>
+    <url-pattern>/AdminDogInfoEntryController</url-pattern>
+  </servlet-mapping>
+  
+    <servlet-mapping>
     <servlet-name>adminlogin</servlet-name>
     <url-pattern>/AdminLoginServlet</url-pattern>
   </servlet-mapping>

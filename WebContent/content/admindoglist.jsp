@@ -103,38 +103,38 @@ th {
 			<h4>Add Dog</h4>
 			<table class="table table-bordered">
 				<BR>
-				<form>
-
+				<form id="myForm" method="post" class="bs-example form-horizontal"
+							action="../AdminDogInfoEntryController">
 					<div class="form-group">
 						<label for="animal_id" class="control-label">Animal ID</label> <input
-							type="text" class="form-control" id="animal_id" name="animalID"
+							type="text" class="form-control" id="animal_id" name="dogID"
 							placeholder="045678">
 					</div>
 
 					<div class="form-group">
 						<label for="animal_name" class="control-label">Animal Name</label>
 						<input type="text" class="form-control" id="animal_name"
-							name="animalName" placeholder="Animal Name">
+							name="dogName" placeholder="Animal Name">
 					</div>
 
 
 					<div class="form-group">
 						<label for="status_id" class="control-label">Status</label> <select
-							class="form-control" id="status_id">
-							<option value="NW">New</option>
-							<option value="AA">Available for Adoption</option>
-							<option value="OH">On Hold</option>
-							<option value="AD">Adopted</option>
+							class="form-control" id="status_id" name="dogStatus">
+							<option value="New">New</option>
+							<option value="Available for Adoption">Available for Adoption</option>
+							<option value="On Hold">On Hold</option>
+							<option value="Adopted">Adopted</option>
 						</select>
 					</div>
 
 					<div class="form-group">
 						<label for="suite_room" class="control-label">Room/Suite#</label>
 						<input type="text" class="form-control" id="suiteroom_id"
-							name="suiteroom" placeholder="###">
+							name="roomNumber" placeholder="###">
 					</div>
 					<div class="form-group">
-						<input id="input-file" name="input-file" type="file" class="file"
+						<input id="input-file" name="file" type="file" class="file"
 							data-show-preview="false">
 					</div>
 
@@ -149,6 +149,8 @@ th {
 			</table>
 		</div>
 	</div>
+	<br>
+	<br>
 	<div>
 		<jsp:include page="footer.jsp" />
 	</div>
