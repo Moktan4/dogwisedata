@@ -1,65 +1,74 @@
 package com.msis.dogwiseproject.web;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
+import com.msis.dogwiseproject.dao.DogAdminDao;
 import com.msis.dogwiseproject.model.DogBean;
 
-	@WebServlet("/adminServlet")
+
 	public class AdminDogInfoEntryController extends HttpServlet {
 		
 		/**
 		 * 
 		 */
 		private static final long serialVersionUID = 1L;
-		private DogBean dogBean;
-		private static String ADMIN_DOG_LIST = "content/admindoglist.jsp";
+		private DogAdminDao dogDao;
+		private static String ADMIN_DOG_LIST = "content/admintask.jsp";
 		
 
 		public AdminDogInfoEntryController() {
 			super();
-			dogBean=new DogBean();
+			dogDao=new DogAdminDao();
 			
 		}
 
 		protected void doGet(HttpServletRequest request,
 				HttpServletResponse response) throws ServletException, IOException {	
-			String forward = ADMIN_DOG_LIST;
+			String forward = "";
+			String action = request.getParameter("action");
+			
+			if(action.equalsIgnoreCase("delete")){
+				int dogID=Integer.parseInt(request.getParameter("dogID"));
+				dogDao.delete(dogID);
+				forward=ADMIN_DOG_LIST;
+				request.setAttribute("doglist", dogDao.getAllDogs());
+			}else if(action.equalsIgnoreCase("dogs")){
+				forward=ADMIN_DOG_LIST;
+				request.setAttribute("doglist", dogDao.getAllDogs());
+			}else{
+				forward=ADMIN_DOG_LIST;
+			}
+			
 			RequestDispatcher view = request.getRequestDispatcher(forward);
 			view.forward(request, response);
 		}
 
 		protected void doPost(HttpServletRequest request,
 				HttpServletResponse response) throws ServletException, IOException {
-			//String pageName = request.getParameter("pageName");
-			String forward = "";	
-			if (dogBean != null) {
-				String dogID= request.getParameter(dogBean.getDogID());
-				String dogName= request.getParameter(dogBean.getDogName());
-				String roomNumber= request.getParameter(dogBean.getRoomNumber());
-				String dogStatus= request.getParameter(dogBean.getDogStatus());
-				String fileName = request.getParameter("file");
-				
-				dogBean.save(dogID,
-						dogName,
-						roomNumber,
-						dogStatus, fileName);
-				
-			}
-		
+			String forward = "";
+				DogBean db = new DogBean();	
 			
-			RequestDispatcher view = request.getRequestDispatcher(forward);
+				Integer dogID=Integer.valueOf((request.getParameter("dogID")));
+				db.setDogID(dogID);
+				db.setDogName(request.getParameter("dogName"));
+				db.setRoomNumber(request.getParameter("roomNumber"));
+				db.setDogStatus(request.getParameter("dogStatus"));
+				db.setUploadFile(request.getParameter("uploadFile"));
+
+				dogDao.save(db);
+				
+			
+			RequestDispatcher view = request.getRequestDispatcher(ADMIN_DOG_LIST);
 			view.forward(request, response);
 		}
+		 
 	}

@@ -11,43 +11,50 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.msis.dogwiseproject.model.VolunteerBean;
+import com.msis.dogwiseproject.model.VolunteerDao;
 
-@WebServlet("/dogwiseJDBCServlet")
 public class DogWiseDataController extends HttpServlet {
 	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private VolunteerBean volunteerBean;
+	private VolunteerDao volunteerDao;
 	private static String DOGWISE_FORM = "content/dogwiseform.jsp";
 	
 	private static String ADMIN_LOGIN="content/admin.jsp";
 
 	public DogWiseDataController() {
 		super();
-		volunteerBean=new VolunteerBean();
+		volunteerDao=new VolunteerDao();
 		
 	}
 
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {	
 		String forward = DOGWISE_FORM;
+		String action = request.getParameter("action");
+		
+		if(action.equalsIgnoreCase("select")){
+			int dogID=Integer.parseInt(request.getParameter("dogID"));
+			volunteerDao.select(dogID);
+			forward=DOGWISE_FORM;
+		}
 		RequestDispatcher view = request.getRequestDispatcher(forward);
 		view.forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		//String pageName = request.getParameter("pageName");
 		String forward = "";	
-		if (volunteerBean != null) {
+		if (volunteerDao != null) {
 			
 			boolean potty1= Boolean.parseBoolean(request.getParameter("potty"));
 			boolean exercise= Boolean.parseBoolean(request.getParameter("exercise"));
 			boolean training= Boolean.parseBoolean(request.getParameter("training"));
-			volunteerBean.save(
+			volunteerDao.save(
 					request.getParameter("datetimepicker"),
 					potty1,
 					exercise,

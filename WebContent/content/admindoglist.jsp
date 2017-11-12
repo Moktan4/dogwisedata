@@ -87,7 +87,7 @@ th {
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/dogwisedata/">Home</a></li>
 					<li><a style="background-color: #fff" href="#">Add Dog</a></li>
-					<li><a href="dogstype.jsp">View Dog</a></li>
+					<li><a href="volunteer.jsp">View Dog</a></li>
 				</ul>
 			</div>
 		</div>
@@ -108,13 +108,13 @@ th {
 					<div class="form-group">
 						<label for="animal_id" class="control-label">Animal ID</label> <input
 							type="text" class="form-control" id="animal_id" name="dogID"
-							placeholder="045678">
+							placeholder="045678" required="" autofocus="">
 					</div>
 
 					<div class="form-group">
 						<label for="animal_name" class="control-label">Animal Name</label>
 						<input type="text" class="form-control" id="animal_name"
-							name="dogName" placeholder="Animal Name">
+							name="dogName" placeholder="Animal Name" required="" autofocus="">
 					</div>
 
 
@@ -131,13 +131,12 @@ th {
 					<div class="form-group">
 						<label for="suite_room" class="control-label">Room/Suite#</label>
 						<input type="text" class="form-control" id="suiteroom_id"
-							name="roomNumber" placeholder="###">
+							name="roomNumber" placeholder="###" required="" autofocus="">
 					</div>
 					<div class="form-group">
-						<input id="input-file" name="file" type="file" class="file"
-							data-show-preview="false">
+						<input id="input-file" name="uploadFile" type="file" class="file"
+							data-show-preview="false" required="" autofocus="">
 					</div>
-
 
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary pull-right">Add

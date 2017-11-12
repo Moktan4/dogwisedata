@@ -5,10 +5,10 @@ import java.sql.SQLException;
 
 import com.msis.dogwiseproject.backend.MyJDBCConnection;
 
-public class VolunteerBean {
+public class VolunteerDao {
 	private Connection dbConnection;
 	
-	public VolunteerBean() {
+	public VolunteerDao() {
 		dbConnection = MyJDBCConnection.getConnection();
 	}
 	
@@ -23,5 +23,16 @@ public class VolunteerBean {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} 
+	}
+
+	public void select(int dogID) {
+		try {
+			java.sql.PreparedStatement prepStatement = dbConnection.prepareStatement("Select * FROM doglist where dogID=?");
+			prepStatement.setInt(1, dogID);
+			prepStatement.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

@@ -3,7 +3,6 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
 <%@ page import="java.io.*"%>
-<%@ page errorPage="error.jsp" %>  
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -100,7 +99,6 @@ th{
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/dogwisedata/">Home</a></li>
 					<li><a style="background-color: #fff" href="#">Dog List</a></li>
-					<li><a href="/dogwisedata/">Logout</li>
 				</ul>
 			</div>
 		</div>
@@ -124,16 +122,14 @@ rs = st.executeQuery();
 %>
 
 <div class="container">
-   <button type="button" style="float: right" class="btn btn-link"><a href="content/admindoglist.jsp">Add Dog</a></button>   
   <table class="table table-striped">
    <thead>
 	<tr >
 			<th>ID</th>
 			<th>Name</th>
 			<th>Suite/Room#</th>
-			<th>Dog Status</th>
 			<th>Dog Information</th>
-			<th>Delete</th>
+			<th>Selection</th>
 		</tr>
 		</thead>
 		<%
@@ -143,9 +139,8 @@ while (rs.next()) {
 			<TD><%=rs.getString(1)%></TD>
 			<TD><%=rs.getString(2)%></TD>
 			<TD><%=rs.getString(3)%></TD>
-			<TD><%=rs.getString(4)%></TD>
 			<TD><%=rs.getString(5)%></TD>
-			<TD> <a href="AdminDogInfoEntryController?action=delete&dogID=<%=rs.getString(1)%>"/>Delete</a></TD>
+			<TD> <a href="dogwiseform.jsp?id=<%=rs.getString(1) %>">SELECT</a> </TD>
 		</TR>
 		<% } %>
 		<%
