@@ -1,62 +1,65 @@
 package com.msis.dogwiseproject.model;
 
-import java.util.Date;
-
 public class VolunteerModel {
 	
 	private String datetimepicker;
-	
-	private boolean potty;
-	private boolean exercise;
-	private boolean training;
+	private String initials;
+	private String potty;
+	private String exercise;
+	private String training;
 	private int timeLength;
-	private boolean parkPlay;
-	private boolean fetch;
-	private boolean tug;
-	private boolean playGroups;
+	private String parkPlay;
+	private String fetch;
+	private String tug;
+	private String playGroups;
 	private int timeLength1;
-	private boolean inroom;
-	private boolean outsideroom;
+	private String inroom;
+	private String outsideroom;
 	private int timeLength2;
-	private boolean sit;
-	private boolean down;
-	private boolean stand;
-	private boolean watch;
-	private boolean peoplefoodgood;
-	private boolean politegreeting;
-	private boolean staySettle;
-	private boolean leavetakethanks;
-	private boolean kongtraining;
-	private boolean cratetraining;
-	private boolean other;
+	private String sit;
+	private String down;
+	private String stand;
+	private String watch;
+	private String peoplefoodgood;
+	private String politegreeting;
+	private String staySettle;
+	private String leavetakethanks;
+	private String kongtraining;
+	private String cratetraining;
+	private String other;
 	private String otherInfo;
 	private String paragraph_text;
 	private String successes;
 	private String challenges;
-	
-	public boolean isPotty() {
-		return potty;
-	}
-	public void setPotty(boolean potty) {
-		this.potty = potty;
-	}
-	public boolean isExercise() {
-		return exercise;
-	}
-	public void setExercise(boolean exercise) {
-		this.exercise = exercise;
-	}
-	public boolean isTraining() {
-		return training;
-	}
-	public void setTraining(boolean training) {
-		this.training = training;
-	}
 	public String getDatetimepicker() {
 		return datetimepicker;
 	}
 	public void setDatetimepicker(String datetimepicker) {
 		this.datetimepicker = datetimepicker;
+	}
+	public String getInitials() {
+		return initials;
+	}
+	public void setInitials(String initials) {
+		this.initials = initials;
+	}
+	public String getPotty() {
+		return potty;
+	}
+	public void setPotty(String potty) {
+		this.potty = potty;
+	}
+	public String getExercise() {
+		return exercise;
+	}
+	public void setExercise(String exercise) {
+		this.exercise = exercise;
+	}
+	public String getTraining() {
+		return training;
+	}
+	public void setTraining(String training) {
+		this.training = training;
 	}
 	public int getTimeLength() {
 		return timeLength;
@@ -64,28 +67,28 @@ public class VolunteerModel {
 	public void setTimeLength(int timeLength) {
 		this.timeLength = timeLength;
 	}
-	public boolean isParkPlay() {
+	public String getParkPlay() {
 		return parkPlay;
 	}
-	public void setParkPlay(boolean parkPlay) {
+	public void setParkPlay(String parkPlay) {
 		this.parkPlay = parkPlay;
 	}
-	public boolean isFetch() {
+	public String getFetch() {
 		return fetch;
 	}
-	public void setFetch(boolean fetch) {
+	public void setFetch(String fetch) {
 		this.fetch = fetch;
 	}
-	public boolean isTug() {
+	public String getTug() {
 		return tug;
 	}
-	public void setTug(boolean tug) {
+	public void setTug(String tug) {
 		this.tug = tug;
 	}
-	public boolean isPlayGroups() {
+	public String getPlayGroups() {
 		return playGroups;
 	}
-	public void setPlayGroups(boolean playGroups) {
+	public void setPlayGroups(String playGroups) {
 		this.playGroups = playGroups;
 	}
 	public int getTimeLength1() {
@@ -94,16 +97,16 @@ public class VolunteerModel {
 	public void setTimeLength1(int timeLength1) {
 		this.timeLength1 = timeLength1;
 	}
-	public boolean isInroom() {
+	public String getInroom() {
 		return inroom;
 	}
-	public void setInroom(boolean inroom) {
+	public void setInroom(String inroom) {
 		this.inroom = inroom;
 	}
-	public boolean isOutsideroom() {
+	public String getOutsideroom() {
 		return outsideroom;
 	}
-	public void setOutsideroom(boolean outsideroom) {
+	public void setOutsideroom(String outsideroom) {
 		this.outsideroom = outsideroom;
 	}
 	public int getTimeLength2() {
@@ -112,70 +115,70 @@ public class VolunteerModel {
 	public void setTimeLength2(int timeLength2) {
 		this.timeLength2 = timeLength2;
 	}
-	public boolean isSit() {
+	public String getSit() {
 		return sit;
 	}
-	public void setSit(boolean sit) {
+	public void setSit(String sit) {
 		this.sit = sit;
 	}
-	public boolean isDown() {
+	public String getDown() {
 		return down;
 	}
-	public void setDown(boolean down) {
+	public void setDown(String down) {
 		this.down = down;
 	}
-	public boolean isStand() {
+	public String getStand() {
 		return stand;
 	}
-	public void setStand(boolean stand) {
+	public void setStand(String stand) {
 		this.stand = stand;
 	}
-	public boolean isWatch() {
+	public String getWatch() {
 		return watch;
 	}
-	public void setWatch(boolean watch) {
+	public void setWatch(String watch) {
 		this.watch = watch;
 	}
-	public boolean isPeoplefoodgood() {
+	public String getPeoplefoodgood() {
 		return peoplefoodgood;
 	}
-	public void setPeoplefoodgood(boolean peoplefoodgood) {
+	public void setPeoplefoodgood(String peoplefoodgood) {
 		this.peoplefoodgood = peoplefoodgood;
 	}
-	public boolean isPolitegreeting() {
+	public String getPolitegreeting() {
 		return politegreeting;
 	}
-	public void setPolitegreeting(boolean politegreeting) {
+	public void setPolitegreeting(String politegreeting) {
 		this.politegreeting = politegreeting;
 	}
-	public boolean isStaySettle() {
+	public String getStaySettle() {
 		return staySettle;
 	}
-	public void setStaySettle(boolean staySettle) {
+	public void setStaySettle(String staySettle) {
 		this.staySettle = staySettle;
 	}
-	public boolean isLeavetakethanks() {
+	public String getLeavetakethanks() {
 		return leavetakethanks;
 	}
-	public void setLeavetakethanks(boolean leavetakethanks) {
+	public void setLeavetakethanks(String leavetakethanks) {
 		this.leavetakethanks = leavetakethanks;
 	}
-	public boolean isKongtraining() {
+	public String getKongtraining() {
 		return kongtraining;
 	}
-	public void setKongtraining(boolean kongtraining) {
+	public void setKongtraining(String kongtraining) {
 		this.kongtraining = kongtraining;
 	}
-	public boolean isCratetraining() {
+	public String getCratetraining() {
 		return cratetraining;
 	}
-	public void setCratetraining(boolean cratetraining) {
+	public void setCratetraining(String cratetraining) {
 		this.cratetraining = cratetraining;
 	}
-	public boolean isOther() {
+	public String getOther() {
 		return other;
 	}
-	public void setOther(boolean other) {
+	public void setOther(String other) {
 		this.other = other;
 	}
 	public String getOtherInfo() {
@@ -202,8 +205,4 @@ public class VolunteerModel {
 	public void setChallenges(String challenges) {
 		this.challenges = challenges;
 	}
-	
-	
-	
-
 }

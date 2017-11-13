@@ -2,12 +2,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*"%>
-<%@ page import="java.io.*"%>
-<%@ page errorPage="error.jsp" %>  
+<%@ page import="java.io.*"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<head>
+
 <title>Admin Page</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +16,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
+
 </head>
 <style>
 .jumbotron {
@@ -154,13 +153,14 @@ rs.close();
 st.close();
 } catch (Exception ex) {
 %>
-		</font>
-		<font size="+3" color="red"></b> <%
+		
+		<font size="+3" color="red"></b></font> <%
 out.println("Unable to connect to database.");
+		
 }
 %>
 	</table>
-	</font>
+	
 
 	</div>
 	<div>
