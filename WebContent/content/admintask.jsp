@@ -99,7 +99,7 @@ th{
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/dogwisedata/">Home</a></li>
 					<li><a style="background-color: #fff" href="#">Dog List</a></li>
-					<li><a href="/dogwisedata/">Logout</li>
+					<li><a href="/dogwisedata/">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -123,7 +123,7 @@ rs = st.executeQuery();
 %>
 
 <div class="container">
-   <button type="button" style="float: right" class="btn btn-link"><a href="content/admindoglist.jsp">Add Dog</a></button>   
+   <button type="button" style="float: right" class="btn btn-link"><a href="admindoglist.jsp">Add Dog</a></button>   
   <table class="table table-striped">
    <thead>
 	<tr >

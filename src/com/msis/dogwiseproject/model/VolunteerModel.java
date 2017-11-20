@@ -3,19 +3,19 @@ package com.msis.dogwiseproject.model;
 public class VolunteerModel {
 	
 	private String datetimepicker;
-	private String initials;
+	private String fullname;
 	private String potty;
 	private String exercise;
 	private String training;
-	private int timeLength;
+	private String timeLength;
 	private String parkPlay;
 	private String fetch;
 	private String tug;
 	private String playGroups;
-	private int timeLength1;
+	private String timeLength1;
 	private String inroom;
 	private String outsideroom;
-	private int timeLength2;
+	private String timeLength2;
 	private String sit;
 	private String down;
 	private String stand;
@@ -37,11 +37,12 @@ public class VolunteerModel {
 	public void setDatetimepicker(String datetimepicker) {
 		this.datetimepicker = datetimepicker;
 	}
-	public String getInitials() {
-		return initials;
+	
+	public String getFullname() {
+		return fullname;
 	}
-	public void setInitials(String initials) {
-		this.initials = initials;
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 	public String getPotty() {
 		return potty;
@@ -61,12 +62,7 @@ public class VolunteerModel {
 	public void setTraining(String training) {
 		this.training = training;
 	}
-	public int getTimeLength() {
-		return timeLength;
-	}
-	public void setTimeLength(int timeLength) {
-		this.timeLength = timeLength;
-	}
+	
 	public String getParkPlay() {
 		return parkPlay;
 	}
@@ -91,12 +87,7 @@ public class VolunteerModel {
 	public void setPlayGroups(String playGroups) {
 		this.playGroups = playGroups;
 	}
-	public int getTimeLength1() {
-		return timeLength1;
-	}
-	public void setTimeLength1(int timeLength1) {
-		this.timeLength1 = timeLength1;
-	}
+
 	public String getInroom() {
 		return inroom;
 	}
@@ -109,12 +100,7 @@ public class VolunteerModel {
 	public void setOutsideroom(String outsideroom) {
 		this.outsideroom = outsideroom;
 	}
-	public int getTimeLength2() {
-		return timeLength2;
-	}
-	public void setTimeLength2(int timeLength2) {
-		this.timeLength2 = timeLength2;
-	}
+
 	public String getSit() {
 		return sit;
 	}
@@ -205,4 +191,24 @@ public class VolunteerModel {
 	public void setChallenges(String challenges) {
 		this.challenges = challenges;
 	}
+	public String getTimeLength() {
+		return timeLength;
+	}
+	public void setTimeLength(String timeLength) {
+		this.timeLength = timeLength;
+	}
+	public String getTimeLength1() {
+		return timeLength1;
+	}
+	public void setTimeLength1(String timeLength1) {
+		this.timeLength1 = timeLength1;
+	}
+	public String getTimeLength2() {
+		return timeLength2;
+	}
+	public void setTimeLength2(String timeLength2) {
+		this.timeLength2 = timeLength2;
+	}
+	
+	
 }

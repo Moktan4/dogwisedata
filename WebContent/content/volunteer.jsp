@@ -122,7 +122,9 @@ rs = st.executeQuery();
 %>
 
 <div class="container">
-  <table class="table table-striped">
+<input style="width:30%;  float:right;"  type="text" id="search" placeholder="Type to search" autofocues="">
+	<BR>
+  <table class="table table-striped" id="table">
    <thead>
 	<tr >
 			<th>ID</th>
@@ -135,7 +137,7 @@ rs = st.executeQuery();
 		<%
 while (rs.next()) {
 %>
-		<TR>
+		<TR id="table">
 			<TD><%=rs.getString(1)%></TD>
 			<TD><%=rs.getString(2)%></TD>
 			<TD><%=rs.getString(3)%></TD>
@@ -149,15 +151,30 @@ rs.close();
 st.close();
 } catch (Exception ex) {
 %>
-		</font>
+		
 		<font size="+3" color="red"></b> <%
 out.println("Unable to connect to database.");
+		
 }
+	
 %>
+</font>
 	</table>
-	</font>
+	
 
 	</div>
+	
+	<script type="text/javascript">
+var $rows = $('#table tr');
+$('#search').keyup(function() {
+    var val = $.trim($(this).val()).replace(/ +/g, ' ').toLowerCase();
+    
+    $rows.show().filter(function() {
+        var text = $(this).text().replace(/\s+/g, ' ').toLowerCase();
+        return !~text.indexOf(val);
+    }).hide();
+});
+</script>
 	<div>
 
 		<jsp:include page="footer.jsp" />

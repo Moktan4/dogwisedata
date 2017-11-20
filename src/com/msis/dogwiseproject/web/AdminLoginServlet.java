@@ -25,7 +25,7 @@ public class AdminLoginServlet extends HttpServlet{
 
 
 	        String destination = "content/admin.jsp";
-
+	        
 	        RequestDispatcher rd = getServletContext().getRequestDispatcher(destination);
 	        rd.forward(request, response);
 	    }
@@ -37,27 +37,29 @@ public class AdminLoginServlet extends HttpServlet{
 		 
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
+		
 			String name=request.getParameter("username");
 			String pass=request.getParameter("userpass");
 		  
 		
 		 
-		  
 		  if (AdminLoginDAO.validate(name, pass)){
-			  HttpSession session = request.getSession(true);
-			  System.out.println("Validated");
-			  session = request.getSession(true);
+			  HttpSession   session = request.getSession(true);
 			  session.setMaxInactiveInterval(30);
 			  session.setAttribute("name", name);
-			  RequestDispatcher rd = request.getRequestDispatcher("content/admintask.jsp");
-			  rd.forward(request, response);
+			  response.sendRedirect("content/admintask.jsp");
+			
 		  }else{
-			  RequestDispatcher rd = request.getRequestDispatcher("content/admin.jsp");
-			  out.println("<font color=red>Either user name or password is wrong.</font>");
-			  rd.include(request, response);
-			    
-		  }
-		  out.close();  
+			  
+			  out.println("<script type=\"text/javascript\">");
+			   out.println("alert('User or password incorrect');");
+			   out.println("location='content/admin.jsp';");
+			   out.println("</script>");
+			// response.sendRedirect("content/admin.jsp");
+			
+			  
+  	        	
+		  }  
 		}
 
 }

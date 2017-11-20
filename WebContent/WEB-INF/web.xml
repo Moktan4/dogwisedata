@@ -27,7 +27,7 @@
    
   <servlet-mapping>
     <servlet-name>dogwiseJDBCServlet</servlet-name>
-    <url-pattern>/DogWiseDataController</url-pattern>
+    <url-pattern>/DogWiseDataController/*</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>
