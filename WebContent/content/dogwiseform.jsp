@@ -15,7 +15,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Interactions Form</title>
-
+<link rel="shortcut icon" href="/dogwisedata/assets/img/favicon.ico" />
 <link href="/dogwisedata/assets/css/bootstrap-united.css"
 	rel="stylesheet" />
 <link href="/dogwisedata/assets/css/bootstrap-datetimepicker.min.css"
