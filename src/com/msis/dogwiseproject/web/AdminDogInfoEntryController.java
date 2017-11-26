@@ -1,10 +1,8 @@
 package com.msis.dogwiseproject.web;
 
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,8 +19,8 @@ import com.msis.dogwiseproject.model.DogBean;
 		 */
 		private static final long serialVersionUID = 1L;
 		private DogAdminDao dogDao;
-		private static String ADMIN_DOG_LIST = "content/admintask.jsp";
-		
+		private static String ADMIN_DOG_LIST = "content/admindoglist.jsp";
+		private static String ADMIN_TASK="content/admintask.jsp";
 
 		public AdminDogInfoEntryController() {
 			super();
@@ -32,41 +30,55 @@ import com.msis.dogwiseproject.model.DogBean;
 
 		protected void doGet(HttpServletRequest request,
 				HttpServletResponse response) throws ServletException, IOException {	
-			String forward = "";
 			String action = request.getParameter("action");
 			
 			if(action.equalsIgnoreCase("delete")){
 				int dogID=Integer.parseInt(request.getParameter("dogID"));
 				dogDao.delete(dogID);
-				forward=ADMIN_DOG_LIST;
-				request.setAttribute("doglist", dogDao.getAllDogs());
-			}else if(action.equalsIgnoreCase("dogs")){
-				forward=ADMIN_DOG_LIST;
-				request.setAttribute("doglist", dogDao.getAllDogs());
+				response.sendRedirect("content/admintask.jsp");
 			}else{
-				forward=ADMIN_DOG_LIST;
+			response.sendRedirect(ADMIN_DOG_LIST);
 			}
-			
-			RequestDispatcher view = request.getRequestDispatcher(forward);
-			view.forward(request, response);
 		}
 
 		protected void doPost(HttpServletRequest request,
 				HttpServletResponse response) throws ServletException, IOException {
-			String forward = "";
-				DogBean db = new DogBean();	
-				Integer dogID=Integer.valueOf((request.getParameter("dogID")));
-				db.setDogID(dogID);
-				db.setDogName(request.getParameter("dogName"));
-				db.setRoomNumber(request.getParameter("roomNumber"));
-				db.setDogStatus(request.getParameter("dogStatus"));
-				db.setUploadFile(request.getParameter("uploadFile"));
-
-				dogDao.save(db);
-				
 			
-			RequestDispatcher view = request.getRequestDispatcher(ADMIN_DOG_LIST);
-			view.forward(request, response);
+			response.setContentType("text/html");  
+            PrintWriter out=response.getWriter();  
+			int dogID=Integer.valueOf((request.getParameter("dogID")));
+					
+			System.out.println(dogDao.getAllDogs());
+			//DogBean db = new DogBean();	
+			
+			DogBean db = new DogBean();	
+			db.setDogID(dogID);
+			db.setDogName(request.getParameter("dogName"));
+			db.setRoomNumber(request.getParameter("roomNumber"));
+			db.setDogStatus(request.getParameter("dogStatus"));
+			db.setUploadFile(request.getParameter("uploadFile"));
+			
+			for(DogBean dog:dogDao.getAllDogs()){
+				System.out.println(dog.getDogID());
+				//System.out.println(dogID.equals(dog.getDogID()));
+				
+			if(dog.getDogID()==(dogID)){
+			   out.println("<script type=\"text/javascript\">");
+			   out.println("alert('This dog ID exists already.');");
+			   out.println("location='content/admindoglist.jsp';");
+			   out.println("</script>");
+				
+			}else{
+				
+				dogDao.save(db);
+				System.out.println("I cam here");
+					
+			}
+				
+			}
+			response.sendRedirect(ADMIN_TASK);
 		}
+
+		
 		 
 	}
