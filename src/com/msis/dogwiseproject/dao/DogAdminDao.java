@@ -1,5 +1,7 @@
 package com.msis.dogwiseproject.dao;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -17,7 +19,9 @@ private Connection dbConnection;
 		dbConnection = MyJDBCConnection.getConnection();
 	}
 	public void save(DogBean dogBean) {
-		try {
+		try{
+			
+			
 			java.sql.PreparedStatement prepStatement = dbConnection.prepareStatement("insert into doglist(dogID, dogName, roomNumber, dogStatus, uploadFile) values (?, ?, ?, ?,?)");
 			prepStatement.setInt(1, dogBean.getDogID());
 			prepStatement.setString(2, dogBean.getDogName());
@@ -25,16 +29,19 @@ private Connection dbConnection;
 			prepStatement.setString(4, dogBean.getDogStatus());
 			prepStatement.setString(5, dogBean.getUploadFile());
 			prepStatement.executeUpdate();
+			
 		} catch (SQLException e) {
-			
-			
-		}
+			e.printStackTrace();
+		}	
+	
+		
 	}
 	public void delete(int dogID) {
 		try {
 			java.sql.PreparedStatement prepStatement = dbConnection.prepareStatement("Delete FROM doglist where dogID=?");
 			prepStatement.setInt(1, dogID);
 			prepStatement.executeUpdate();
+	
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -53,13 +60,14 @@ private Connection dbConnection;
                 db.setDogStatus(rs.getString("dogStatus"));
                 db.setUploadFile(rs.getString("uploadFile"));
                 dbs.add(db);
+
             }
+     
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
         return dbs;
     }
-
 
 }

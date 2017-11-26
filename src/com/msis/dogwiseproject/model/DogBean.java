@@ -1,6 +1,7 @@
 package com.msis.dogwiseproject.model;
 
 import java.io.File;
+import java.io.FileInputStream;
 
 public class DogBean {
 	
@@ -39,8 +40,8 @@ public class DogBean {
 	public String getUploadFile() {
 		return uploadFile;
 	}
-	public void setUploadFile(String uploadFile) {
-		this.uploadFile = uploadFile;
+	public void setUploadFile(String string) {
+		this.uploadFile = string;
 	}
 	@Override
 	public String toString() {

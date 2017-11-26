@@ -74,8 +74,8 @@ body{
 
 				<div class="collapse navbar-collapse" id="myNavbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="content/admin.jsp">I'm an Admin</a></li>
-						<li><a href="content/volunteer.jsp">I am a Volunteer</a></li>
+						<li><a href="AdminServlet">I'm an Admin</a></li>
+						<li><a href="VolunteerServlet">I am a Volunteer</a></li>
 					</ul>
 				</div>
 			</div>

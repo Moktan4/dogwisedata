@@ -45,8 +45,8 @@ public class AdminLoginServlet extends HttpServlet{
 		 
 		  if (AdminLoginDAO.validate(name, pass)){
 			  HttpSession   session = request.getSession(true);
-			  session.setMaxInactiveInterval(30);
-			  session.setAttribute("name", name);
+			  session.setMaxInactiveInterval(15);
+			  request.getSession().setAttribute("name", name);
 			  response.sendRedirect("content/admintask.jsp");
 			
 		  }else{

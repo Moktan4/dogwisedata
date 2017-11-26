@@ -133,6 +133,7 @@ rs = st.executeQuery();
 			<th>Suite/Room#</th>
 			<th>Dog Information</th>
 			<th>Selection</th>
+			<th>Socilization Logs</th>
 		</tr>
 		</thead>
 		<%
@@ -144,6 +145,7 @@ while (rs.next()) {
 			<TD><%=rs.getString(3)%></TD>
 			<TD><%=rs.getString(5)%></TD>
 			<TD> <a href="dogwiseform.jsp?id=<%=rs.getString(1) %>">SELECT</a> </TD>
+			<TD> <a href="dogprofilelogs.jsp?dogid=<%=rs.getString(1) %>">View Logs</a> </TD>
 		</TR>
 		<% } %>
 		<%

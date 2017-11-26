@@ -113,7 +113,8 @@ th{
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/dogwisedata/">Home</a></li>
 					<li><a style="background-color: #fff" href="#">Socialization Logs</a></li>
-					 <li><a href="volunteer.jsp">View Dog</a></li>
+					<li><a href="admintask.jsp">Dog List</a></li>
+					<li><a href="/dogwisedata/LogoutServlet">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -122,7 +123,7 @@ th{
 	</div>
 	<BR>
 	<BR>
-	<%String name = request.getParameter("dogid");%>
+	
 <% 
 try {
 
@@ -131,11 +132,10 @@ Connection conn = null;
 java.sql.PreparedStatement st=null;
 ResultSet rs=null;
 
-st=MyJDBCConnection.getConnection().prepareStatement("SELECT * from dogwisedata where dogidentify="+name);
+st=MyJDBCConnection.getConnection().prepareStatement("SELECT * from dogwisedata ");
 rs = st.executeQuery(); 
 %>
 <div class="container">
-Name:<%request.getParameter("dogid");%> 
 	<input style="width:30%;  float:right;"  type="text" id="search" placeholder="Type to search" autofocues="">
 	<BR>
   <table width="100%" border="1" id="table">

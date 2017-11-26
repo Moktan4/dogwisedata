@@ -48,7 +48,53 @@
   <servlet-name>dogAddition</servlet-name>
   <url-pattern>/adminAddsDog</url-pattern> <!-- Use this URL -->
 </servlet-mapping>
+
+<servlet>  
+    <description></description>  
+    <display-name>LogoutServlet</display-name>  
+    <servlet-name>LogoutServlet</servlet-name>  
+    <servlet-class>com.msis.dogwiseproject.web.LogoutServlet</servlet-class>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>LogoutServlet</servlet-name>  
+    <url-pattern>/LogoutServlet</url-pattern>  
+  </servlet-mapping>  
   
+  <servlet>  
+    <description></description>  
+    <display-name>AdminServlet</display-name>  
+    <servlet-name>AdminServlet</servlet-name>  
+    <servlet-class>com.msis.dogwiseproject.web.AdminServlet</servlet-class> 
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>AdminServlet</servlet-name>  
+    <url-pattern>/AdminServlet</url-pattern>  
+  </servlet-mapping>  
+  
+    <servlet>  
+    <description></description>  
+    <display-name>VolunteerServlet</display-name>  
+    <servlet-name>VolunteerServlet</servlet-name>  
+    <servlet-class>com.msis.dogwiseproject.web.VolunteerServlet</servlet-class> 
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>VolunteerServlet</servlet-name>  
+    <url-pattern>/VolunteerServlet</url-pattern>  
+  </servlet-mapping> 
+  
+  
+    <servlet>  
+    <description></description>  
+    <display-name>AdminDogList</display-name>  
+    <servlet-name>AdminDogList</servlet-name>  
+    <servlet-class>com.msis.dogwiseproject.web.AdminDogList</servlet-class> 
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>AdminDogList</servlet-name>  
+    <url-pattern>/AdminDogList</url-pattern>  
+  </servlet-mapping> 
+  
+ 
 
   
 </web-app>

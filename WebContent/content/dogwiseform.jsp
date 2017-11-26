@@ -139,6 +139,7 @@ rs = st.executeQuery();
 			</TR>
 		</table>
 	</div>
+	
 	<%} %>
 
 	<%
@@ -164,6 +165,8 @@ out.println("Unable to connect to database.");
 			action="../DogWiseDataController">
 			<div class="form-group">
 				<div>
+				<label for="dogid" style="width: 292px; color: green;">Dog ID:</label>
+				<input type="hidden" name="dogid" value="<%=id%>"><%=id%><br> 
 					<label for="initial" style="width: 292px; color: green;">Volunteer
 						Full Name:</label> <input type="text" style="width: 292px;" name="fullname"
 						id="initialsInput" required> <br> <label
@@ -241,14 +244,11 @@ out.println("Unable to connect to database.");
 						style="width: 1136px; height: 107px; text-indent: 50px;"></textarea>
 					<br> <br>
 				</div>
-				<div class="form-group">
+				<div class="form-group" >
 					<input class="btn btn-primary " type="submit" value="submit">
-					<a href="dogprofilelogs.jsp"><button type="button"
+					<a href="volunteer.jsp"><button type="button"
 							class="btn btn-primary">Cancel</button></a>
-
 				</div>
-
-
 			</div>
 		</form>
 	</div>

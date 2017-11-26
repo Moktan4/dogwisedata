@@ -1,6 +1,7 @@
 package com.msis.dogwiseproject.web;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -30,7 +31,7 @@ public class DogWiseDataController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 	private VolunteerDao volunteerDao;
-	private static String DOGWISE_FORM = "content/dogprofilelogs.jsp";
+	private static String DOGWISE_FORM = "content/dogwiseform.jsp";
 
 	private static String ADMIN_LOGIN = "content/admindoglist.jsp";
 
@@ -68,6 +69,8 @@ public class DogWiseDataController extends HttpServlet {
 		String timeStamp = df.format(calobj.getTime());
 		String forward = "";
 		VolunteerModel vm = new VolunteerModel();
+		vm.setDogIdentification(request.getParameter("dogid")!=null?request.getParameter("dogid"):"");
+	
 		vm.setFullname(request.getParameter("fullname")!=null?request.getParameter("fullname"):"");
 		vm.setDatetimepicker(timeStamp);
 		vm.setPotty((request.getParameter("potty")!=null?request.getParameter("potty"):""));
@@ -97,8 +100,14 @@ public class DogWiseDataController extends HttpServlet {
 		vm.setParagraph_text(request.getParameter("paragraph_text")!=null?request.getParameter("paragraph_text"):"");
 		vm.setSuccesses(request.getParameter("successes")!=null?request.getParameter("successes"):"");
 		vm.setChallenges(request.getParameter("challenges")!=null?request.getParameter("challenges"):"");
+	
 		volunteerDao.save(vm);
-
-		response.sendRedirect(DOGWISE_FORM);
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		 out.println("<script type=\"text/javascript\">");
+		 out.println("alert('You have successfully submitted your logs.')");
+		 out.println("location='content/volunteer.jsp';");
+		 out.println("</script>");
+		//response.sendRedirect("content/volunteer.jsp");
 	}
 }

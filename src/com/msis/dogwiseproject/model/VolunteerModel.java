@@ -3,6 +3,7 @@ package com.msis.dogwiseproject.model;
 public class VolunteerModel {
 	
 	private String datetimepicker;
+	private String dogIdentification;
 	private String fullname;
 	private String potty;
 	private String exercise;
@@ -31,6 +32,14 @@ public class VolunteerModel {
 	private String paragraph_text;
 	private String successes;
 	private String challenges;
+	
+	
+	public String getDogIdentification() {
+		return dogIdentification;
+	}
+	public void setDogIdentification(String dogIdentification) {
+		this.dogIdentification = dogIdentification;
+	}
 	public String getDatetimepicker() {
 		return datetimepicker;
 	}
@@ -208,6 +217,19 @@ public class VolunteerModel {
 	}
 	public void setTimeLength2(String timeLength2) {
 		this.timeLength2 = timeLength2;
+	}
+	@Override
+	public String toString() {
+		return "VolunteerModel [datetimepicker=" + datetimepicker + ", dogIdentification=" + dogIdentification
+				+ ", fullname=" + fullname + ", potty=" + potty + ", exercise=" + exercise + ", training=" + training
+				+ ", timeLength=" + timeLength + ", parkPlay=" + parkPlay + ", fetch=" + fetch + ", tug=" + tug
+				+ ", playGroups=" + playGroups + ", timeLength1=" + timeLength1 + ", inroom=" + inroom
+				+ ", outsideroom=" + outsideroom + ", timeLength2=" + timeLength2 + ", sit=" + sit + ", down=" + down
+				+ ", stand=" + stand + ", watch=" + watch + ", peoplefoodgood=" + peoplefoodgood + ", politegreeting="
+				+ politegreeting + ", staySettle=" + staySettle + ", leavetakethanks=" + leavetakethanks
+				+ ", kongtraining=" + kongtraining + ", cratetraining=" + cratetraining + ", other=" + other
+				+ ", otherInfo=" + otherInfo + ", paragraph_text=" + paragraph_text + ", successes=" + successes
+				+ ", challenges=" + challenges + "]";
 	}
 	
 	

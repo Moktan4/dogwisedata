@@ -75,7 +75,6 @@ th{
   text-align:center;
   }
  
-}
 </style>
 <body>
 
@@ -100,7 +99,8 @@ th{
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/dogwisedata/">Home</a></li>
 					<li><a style="background-color: #fff" href="#">Dog List</a></li>
-					<li><a href="/dogwisedata/">Logout</a></li>
+					<li><a href="alldoglogs.jsp">Socialization Logs</a>
+					<li><a href="/dogwisedata/LogoutServlet">Logout</a></li>
 				</ul>
 			</div>
 		</div>
@@ -117,15 +117,21 @@ Connection conn = null;
 java.sql.PreparedStatement st=null;
 ResultSet rs=null;
 
-		
+if (request.getSession().getAttribute("name") == null) {
+    // Not logged in. Redirect to login page.
+    response.sendRedirect("admin.jsp");
+} else {
+	
+
+   
 st =MyJDBCConnection.getConnection().prepareStatement("SELECT * from doglist");
 
 rs = st.executeQuery();
+}
 %>
-
-<div class="container">
-   <button type="button" style="float: right" class="btn btn-link"><a href="admindoglist.jsp">Add Dog</a></button>   
-  <table class="table table-striped">
+<div style="overflow:scroll;height:100%;overflow:auto">
+<a href="admindoglist.jsp"><button type="button" style="float: right" class="btn btn-link">Add Dog</button></a> 
+<table  class="table table-striped" >
    <thead>
 	<tr >
 			<th>ID</th>
@@ -145,7 +151,7 @@ while (rs.next()) {
 			<TD><%=rs.getString(3)%></TD>
 			<TD><%=rs.getString(4)%></TD>
 			<TD><%=rs.getString(5)%></TD>
-			<TD> <a href="AdminDogInfoEntryController?action=delete&dogID=<%=rs.getString(1)%>"/>Delete</a></TD>
+			<TD> <a href="/dogwisedata/AdminDogInfoEntryController?action=delete&dogID=<%=rs.getString(1)%>">Delete</a></TD>
 		</TR>
 		<% } %>
 		<%
@@ -154,18 +160,16 @@ rs.close();
 st.close();
 } catch (Exception ex) {
 %>
-		
-		<font size="+3" color="red"></b></font> <%
+<%
 out.println("Unable to connect to database.");
 		
 }
 %>
 	</table>
-	
 
 	</div>
+	
 	<div>
-
 		<jsp:include page="footer.jsp" />
 	</div>
 </body>

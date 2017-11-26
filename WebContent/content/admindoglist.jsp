@@ -1,5 +1,9 @@
+
+	<%@page import="com.msis.dogwiseproject.backend.MyJDBCConnection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*"%>
+<%@ page import="java.io.*"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -88,7 +92,7 @@ th {
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/dogwisedata/">Home</a></li>
 					<li><a style="background-color: #fff" href="#">Add Dog</a></li>
-					<li><a href="volunteer.jsp">View Dog</a></li>
+					<li><a href="admintask.jsp">Dog List</a></li>
 				</ul>
 			</div>
 		</div>
@@ -99,6 +103,7 @@ th {
 	<br>
 	<br>
 	<br>
+	
 	<div class="container">
 		<div class="table-responsive">
 			<h4>Add Dog</h4>
@@ -109,7 +114,7 @@ th {
 					<div class="form-group">
 						<label for="animal_id" class="control-label">Animal ID</label> <input
 							type="text" class="form-control" id="animal_id" name="dogID"
-							placeholder="045678" required="" autofocus="">
+							placeholder="001" required="Dog ID is required" autofocus="">
 					</div>
 
 					<div class="form-group">
@@ -138,7 +143,6 @@ th {
 						<input id="input-file" name="uploadFile" type="file" class="file"
 							data-show-preview="false" required="" autofocus="">
 					</div>
-
 					<div class="form-group">
 						<button type="submit" class="btn btn-primary pull-right">Add
 							Animal</button>
