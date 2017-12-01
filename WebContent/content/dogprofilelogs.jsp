@@ -212,7 +212,7 @@ while (rs.next()) {
 					}
 				%>
 				<%
-				if(!(rs.getString(17) == null || (rs.getString(17).equals(""))))%><%{%><%=rs.getString(167)%><br>
+				if(!(rs.getString(17) == null || (rs.getString(17).equals(""))))%><%{%><%=rs.getString(17)%><br>
 					<%
 					}
 				%>
