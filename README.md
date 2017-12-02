@@ -10,3 +10,15 @@ only through the HSSV network and volunteer to log the dogs activities by select
 
 Volunteer can access the archive logs of the particular dogs.
 Admin can delete/add dogs.
+
+Tools:
+Eclipse Mars, MySQL WorkBench
+
+Web Technologies:
+JSP, HTML, CSS, Bootstrap Library, Javascript
+
+Language:
+JAVA
+
+
+
